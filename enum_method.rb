@@ -162,21 +162,20 @@ puts '***my_select method***'
 puts [1, 2, 3, 4, 5].my_select(&:even?)
 
 puts '***my_all method***'
-puts %w[ant bear cat].my_all? { |x| x.length >= 3 }
-puts %w[ant bear cat].my_all? { |x| x.length >= 4 }
+puts(%w[ant bear cat].my_all? { |x| x.length >= 3 })
+puts(%w[ant bear cat].my_all? { |x| x.length >= 4 })
 puts arr.my_all?(3)
 puts [].my_all?
 
 puts '***my_any method***'
-puts %w[ant bear cat].my_any? { |x| x.length >= 3 }
-puts %w[ant bear cat].my_any? { |x| x.length >= 4 }
+puts(%w[ant bear cat].my_any? { |x| x.length >= 3 })
+puts(%w[ant bear cat].my_any? { |x| x.length >= 4 })
 puts [1, 3, 2, 6].my_any?(8)
 puts [].my_any?
 
 puts '***my_none method***'
-puts %w[cat bat house].my_none? { |x| x == 'rat' }
-puts %w[cat bat house].my_none? { |x| x == 'house' }
-puts [1, 2, 3].my_none?(4)
+puts(%w[cat bat house].my_none? { |x| x == 'rat' })
+puts(%w[cat bat house].my_none? { |x| x == 'house' })
 
 ary = [1, 2, 4, 2]
 puts '***my_count method***'
@@ -187,8 +186,8 @@ puts ary.my_count(&:even?)
 puts '***my_map method***'
 
 myorder = ['medium Big Mac', 'medium fries', 'medium milkshake']
-puts myorder.my_map { |item| item.gsub('medium', 'extra large') }
-puts [1, 2, 3, 4, 5].my_map { |a| a * a }
+puts(myorder.my_map { |item| item.gsub('medium', 'extra large') })
+puts([1, 2, 3, 4, 5].my_map { |a| a * a })
 
 puts '***my_map method with proc***'
 myproc = proc { |x| x * x }
